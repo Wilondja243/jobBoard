@@ -35,7 +35,7 @@
 }
 
 body{
-    background: var(--bs-bg) url("../images/bg.svg");
+    background: var(--bs-bg) url("/static/imgaes/bg.svg");
     font-family: 'mona_sans';
     line-height: 1.6;
     color: var(--clr-text);

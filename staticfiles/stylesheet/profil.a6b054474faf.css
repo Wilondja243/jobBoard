@@ -1,0 +1,394 @@
+@import url("./style.541026761422.css");
+
+
+
+/* --- LAYOUT PRINCIPAL (Colonnes) --- */
+.profile-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* COLONNE DE GAUCHE (Sticky) */
+.left-column {
+    flex: 0 0 300px;
+    background-color: var(--bs-card-opacity); 
+    border-radius: 8px;
+    border: 1px solid var(--bs-card-border);
+    padding: 2rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 90px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bs-primary);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bs-text);
+    margin-bottom: 0.5rem;
+}
+
+.company-location { 
+    display: block;
+    color: var(--bs-text-muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    margin-bottom: 2rem;
+}
+
+/* COLONNE DE DROITE */
+.right-column {
+    flex: 1;
+}
+
+.top-section{
+    flex: 1;
+    background-color: var(--bs-card-opacity);
+    border-radius: 8px;
+    border: 1px solid var(--bs-card-border);
+    padding: 1.5rem;
+}
+
+.profile-section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bs-card-border);
+}
+
+.right-column .company-description {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--bs-text-muted);
+}
+
+/* Bouton Publier (Principal) */
+.btn-primary-action {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.btn-primary-action:hover {
+    background-color: var(--bs-primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-primary-action i {
+    margin-right: 0.5rem;
+}
+
+.btn-secondary-edit {
+    width: 100%;
+    background-color: var(--bs-card);
+    color: var(--bs-text-muted);
+    border: 1px solid var(--bs-card-border);
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-secondary-edit:hover {
+    color: var(--bs-text);
+    border-color: var(--bs-primary);
+}
+
+.logout{
+    color: rgb(164, 0, 0);
+}
+.logout:hover{
+    color: #ee0707;
+}
+
+/* INFOS DE CONTACT */
+.contact-info {
+    text-align: left;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px dashed var(--bs-card-border);
+}
+
+.contact-info h4 {
+    color: var(--bs-text);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-info p {
+    color: var(--bs-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--bs-primary);
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--bs-text);
+}
+
+.contact-info i {
+    margin-right: 0.5rem;
+    color: var(--bs-primary);
+}
+
+/* --- 7. LISTE DES OFFRES --- */
+.job-offer-item {
+    background-color: var(--bs-card);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--bs-card-border);
+    transition: background-color 0.3s;
+}
+
+.job-offer-item:hover {
+    background-color: var(--bs-card-opacity);
+}
+
+.job-offer-item.inactive {
+    background-color: #2c2c2c;
+    border-left-color: var(--bs-text-muted);
+    opacity: 0.7;
+}
+
+.job-info {
+    flex-grow: 1;
+}
+
+.job-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-text);
+}
+
+.job-meta {
+    font-size: 0.75rem;
+    color: var(--bs-text-muted);
+}
+
+.job-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn-candidatures {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid var(--bs-card-border);
+    transition: background-color 0.3s;
+}
+.btn-candidatures:hover {
+    background-color: var(--bs-primary);
+}
+
+.btn-edit {
+    color: var(--bs-text-muted);
+    background: var(--bs-primary);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.3s;
+}
+
+.btn-edit:hover {
+    color: var(--bs-text);
+}
+
+.btn-repost {
+    background-color: var(--bs-text-muted);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-repost:hover {
+    background-color: #5a6268;
+}
+
+/* --- 8. RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .profile-layout {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .left-column {
+        flex: none;
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 1rem;
+        background-color: transparent;
+    }
+    .right-column {
+        padding: 1.5rem;
+    }
+    .profile-picture {
+        margin: 0 auto 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .company-details-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+    }
+    .job-offer-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .job-actions {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .btn-candidatures, .btn-repost, .btn-secondary-edit, .btn-primary-action {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .btn-edit {
+        padding: 0;
+        margin-left: 1rem;
+    }
+}
+
+
+/* ======================================================= */
+        /*---    STYLES SPÉCIFIQUES AU PROFIL CANDIDAT --- */
+/* ======================================================= */
+
+/* Styles généraux du Candidat réutilisant les bases */
+.candidate-profile-layout .candidate-sidebar {
+    /* La colonne latérale du candidat a besoin de styles spécifiques */
+    padding: 2rem 1.5rem; 
+}
+
+.candidate-name {
+    font-size: 1.8rem;
+}
+
+.candidate-title {
+    display: block;
+    color: var(--bs-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.candidate-location {
+    display: block;
+    color: var(--bs-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* --- SECTION COMPÉTENCES --- */
+.skills-section {
+    text-align: left;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px dashed var(--bs-card-border);
+}
+
+.skills-section h4 {
+    color: var(--bs-text);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #333333;
+    color: var(--bs-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--bs-card-border);
+    transition: background-color 0.2s;
+}
+
+.skill-tag:hover {
+    background-color: var(--bs-primary);
+    color: white;
+}
+
+/* --- SECTION EXPÉRIENCE/FORMATION --- */
+.timeline-item {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--bs-primary);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 13px;
+    height: 13px;
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+    border: 2px solid var(--bs-card);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bs-text);
+    flex-grow: 1;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: var(--bs-text-muted);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.timeline-description {
+    font-size: 0.95rem;
+    color: var(--bs-text-light);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+.candidate-sidebar .btn-primary-action {
+    background-color: var(--bs-primary);
+    border: none;
+}
