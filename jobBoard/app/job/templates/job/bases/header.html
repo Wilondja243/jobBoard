@@ -1,0 +1,35 @@
+<!-- HEADER -->
+
+{% if user.role == "employer" %}
+    <div class="top-bar">
+        <div class="nav-content">
+            <a href="#" class="logo">Job<strong>Board</strong></a>
+            <div class="btns">
+                <a href="{% url 'offerForm' %}" class="post-job">
+                    <i class="bi bi-plus-circle-fill"></i>
+                    Publier un emploi
+                </a>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">Job<strong>Board</strong><i class="bi bi-card-list"></i></a>
+
+            <div class="nav-links">
+                <a href="{% url 'home' %}" class="link">Accueil</a>
+                <a href="" class="link">Profil</a>
+            </div>
+            <div class="btns">
+                <a href="{% url 'logout' %}" class="logout" style="border: 1px solid var(--bs-card-border);padding:10px">
+                    <i class="bi bi-box-arrow-right"></i>
+                    Déconnexion
+                </a>
+            </div>
+        </div>
+    </nav>
+{% endif %}
+
+
+<!-- END HEADER -->

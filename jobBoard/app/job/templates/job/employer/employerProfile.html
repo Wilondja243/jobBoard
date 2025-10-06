@@ -1,0 +1,80 @@
+{% extends "../bases/base.html" %}
+
+
+{% block header %}
+    {% include "../bases/header.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <main class="main-layout">
+
+        {% include "../bases/left_bar.html" %}
+
+        <section class="right-bar">
+
+            <div class="profile-layout">
+                
+                <section class="left-column">
+                    <img src="https://picsum.photos/150" alt="profil company" class="profile-picture"> 
+                    
+                    <h2 class="company-name">{{ profil.user.username }}</h2>
+                    <span class="company-location"><i class="bi bi-geo-alt-fill"></i> Bujumbura, Burundi</span>
+
+                    <a href="{% url "offerForm" %}" class="btn-primary-action btn-primary">
+                        <i class="bi bi-plus-circle-fill"></i> Publier une nouvelle offre
+                    </a>
+                    
+                    <div class="contact-info">
+                        <h4><i class="bi bi-info-circle-fill"></i> Contacts Rapides</h4>
+                        <p><i class="bi bi-envelope-fill"></i> <a href="mailto:rh@techcorp.com">{{ profil.user.email }}</a></p>
+                    </div>
+                    <a href="./edit-profil.html" class="btn-secondary-edit btn-primary">
+                        <i class="bi bi-pencil-square"></i> Modifier le Profil
+                    </a>
+                </section>
+                
+                <section class="right-column">
+                    
+                    <div class="top-section">
+                        <h3 class="profile-section-heading">Notre Mission et Description</h3>
+                        <p class="company-description">
+                            Monalina est une startup burundaise spécialisée dans le développement de plateformes web et d'applications mobiles sur mesure pour la région. Notre mission est de fournir des solutions numériques innovantes tout en investissant dans le talent local. Nous cherchons constamment à élever les standards de la technologie en Afrique de l'Est.
+                        </p>
+                    </div>
+
+                    {% if offers %}
+
+                    {% for offer in offers %}
+
+                    <div class="button-section">
+                        <h3 class="profile-section-heading" style="margin-top: 3rem;">Offres d'Emploi Actives</h3>
+                        <div class="job-list-published">
+                            
+                            <div class="job-offer-item active">
+                                <div class="job-info">
+                                    <div class="job-title">{{ offer.title }}</div>
+                                    <div class="job-meta">Publié le {{ offer.created_at }} | <strong>{{ offer.total_candidate }} Candidatures</strong></div>
+                                </div>
+                                <div class="job-actions">
+                                    <a href="{% url "dashboard" %}" class="btn-candidatures"><i class="bi bi-people-fill"></i> Voir Candidatures</a>
+                                    <a href="{% url "update_offer" offer.id %}" class="btn-edit"><i class="bi bi-pencil-fill"></i></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                    {% endif %}
+
+                </section>
+                
+            </div>
+
+        </section>
+        
+    </main>
+
+{% endblock %}

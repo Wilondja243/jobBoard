@@ -1,0 +1,88 @@
+{% extends "../bases/base.html" %}
+
+{% block header %}
+    {% include "../bases/header.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+<main class="container">
+
+    <div class="profile-layout candidate-profile-layout">
+        
+        <section class="left-column candidate-sidebar">
+            <img src="https://picsum.photos/150/150" alt="Photo du Candidat" class="profile-picture"> 
+            
+            <h2 class="candidate-name">[Nom Prénom du Candidat]</h2>
+            <span class="candidate-title"><i class="bi bi-briefcase-fill"></i> Développeur Web Full-Stack</span>
+            <span class="candidate-location"><i class="bi bi-geo-alt-fill"></i> Bujumbura, Burundi</span>
+
+            <a href="./cv/mon-cv.pdf" class="btn-primary-action" download>
+                <i class="bi bi-file-earmark-arrow-down-fill"></i> Télécharger CV
+            </a>
+            
+            <a href="./edit-profil.html" class="btn-secondary-edit">
+                <i class="bi bi-pencil-square"></i> Mettre à jour mon profil
+            </a>
+
+            <div class="contact-info">
+                <h4><i class="bi bi-info-circle-fill"></i> Contact</h4>
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:candidat@email.com">candidat@email.com</a></p>
+                <p><i class="bi bi-linkedin"></i> <a href="#linkedin" target="_blank">LinkedIn</a></p>
+                <p><i class="bi bi-github"></i> <a href="#github" target="_blank">GitHub</a></p>
+            </div>
+            
+            <div class="skills-section">
+                <h4><i class="bi bi-stars"></i> Compétences Clés</h4>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Python/Django</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">SQL</div>
+            </div>
+        </section>
+        
+        <section class="right-column candidate-main-content">
+            
+            <h3 class="profile-section-heading">Résumé Professionnel</h3>
+            <p class="candidate-summary">
+                Développeur Full-Stack passionné avec 4 ans d'expérience dans la création d'applications web robustes et évolutives. Expert en Python (Django) et dans les frameworks front-end modernes. Recherche un rôle stimulant pour innover dans le secteur technologique burundais.
+            </p>
+
+            <h3 class="profile-section-heading">Expérience Professionnelle</h3>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Développeur Senior | TechCorp Solutions</div>
+                    <span class="timeline-date">Jan 2023 - Présent</span>
+                </div>
+                <p class="timeline-description">Direction technique et développement d'une plateforme de gestion des ressources humaines. (Technologies : Django, PostgreSQL, React).</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Développeur Junior | Alpha Agency</div>
+                    <span class="timeline-date">Juil 2021 - Déc 2022</span>
+                </div>
+                <p class="timeline-description">Maintenance et ajout de fonctionnalités sur des sites e-commerce pour PME locales. (Technologies : PHP, MySQL).</p>
+            </div>
+
+            <h3 class="profile-section-heading">Formation</h3>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Licence en Informatique | Université de Bujumbura</div>
+                    <span class="timeline-date">2018 - 2021</span>
+                </div>
+            </div>
+
+        </section>
+        
+    </div>
+    
+</main>
+
+{% endblock %}
+
+{% block footer %}
+    {% include "../bases/footer.html" %}
+{% endblock %}

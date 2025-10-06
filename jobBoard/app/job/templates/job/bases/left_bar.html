@@ -1,0 +1,11 @@
+<div class="left-bar">
+    <h2>Menu</h2>
+    <div class="nav-links">
+        <a href="{% url 'dashboard' %}" class="link"><i class="bi bi-grid-fill"></i>Dashboard</a>
+        <a href="{% url 'employer_offer' %}" class="link"><i class="bi bi-card-list"></i>Emploi publié</a>
+        <a href="{% url "employer_profile" %}" class="link"><i class="bi bi-person"></i>Profil</a>
+    </div>
+    <div class="left-bar__bottom__infos">
+        <a href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i>Déconnexion</a>
+    </div>
+</div>

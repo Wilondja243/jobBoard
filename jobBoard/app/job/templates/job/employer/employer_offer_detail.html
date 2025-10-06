@@ -1,0 +1,109 @@
+{% extends "../bases/base.html" %}
+
+{% block header %}
+    {% include "../bases/header.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main class="main-layout">
+
+    {% include "../bases/left_bar.html" %}
+
+    <section class="right-bar">
+
+        {% if messages %}
+        {% for message in messages %}
+            <div class="message-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        {% if offer %}
+
+        <section id="detail1" class="job-details">
+            <div class="details-header">
+                <h2 class="details-title">{{ offer.title }}</h2>
+                <div class="details-meta">
+                    <strong>{{ offer.company_name }}</strong>
+                    <span>{{ offer.workplace }}</span>
+                    <span class="job-tag">{{ offer.delay }}</span>
+                </div>
+            </div>
+            
+            <div class="details-info-grid">
+                <div><strong>salaire</strong> <span>{{ offer.salary }}$</span></div>
+                <div><strong>Date de Début</strong> <span>15 Novembre 2025</span></div>
+                <div><strong>Horaires</strong> <span>Temps plein (39h/semaine)</span></div>
+            </div>
+
+            <div class="details-content">
+                <h3 class="section-heading">Description</h3>
+                <p>{{ offer.description }}</p>
+
+                <div>
+                    <h3 class="section-heading">Compétences Techniques Impératives</h3>
+                    <p>{{ offer.competence }}</p>
+                </div>
+                
+                <div>
+                    <h3 class="section-heading">Profil et Formation Souhaités</h3>
+                    <p>Étudiant(e) ou jeune diplômé(e) d'un Bac +3/5 en Informatique. Forte capacité d'apprentissage, autonomie et un **portfolio** sont des atouts.</p>
+                </div>
+            </div>
+
+            <div class="btns-actions">
+                <a style="color: white;" id="openShareModalBtn" class="share-trigger-btn"><i class="bi bi-share"></i></a>
+                <div class="right-actions">
+                    <a href="{% url "update_offer" offer.id %}" style="color: green;"><i class="bi bi-pen"></i></a>
+                    <a href="{% url "delete_offer" offer.id %}" style="color: rgb(214, 0, 0)"><i class="bi bi-trash"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+        {% comment %} modal dialog {% endcomment %}
+
+        {% comment %} <dialog id="shareModal" class="share-modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2 class="modal-title">Partager cette offre</h2>
+                    <button id="closeShareModalBtn" class="close-btn" aria-label="Fermer la fenêtre de partage">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </header>
+
+                <section class="modal-body">
+                    
+                    {% with offer_url=request.build_absolute_uri offer_title=offer.title|urlencode %}
+
+                    <p class="share-instruction">Choisissez une plateforme pour partager le lien :</p>
+                    
+                    <div class="share-buttons-modal">
+                        <a class="share-button facebook-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ offer_url }}" target="_blank" title="Partager sur Facebook">
+                            <i class="bi bi-facebook"></i> Facebook
+                        </a>
+                
+                        <a class="share-button twitter-btn" href="https://twitter.com/intent/tweet?url={{ offer_url }}&text={{ offer_title }}" target="_blank" title="Partager sur X (Twitter)">
+                            <i class="bi bi-twitter"></i> X (Twitter)
+                        </a>
+                
+                        <a class="share-button linkedin-btn" href="https://www.linkedin.com/sharing/share-off-url/?url={{ offer_url|urlencode }}" target="_blank" title="Partager sur LinkedIn">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                
+                        <a class="share-button email-btn" href="mailto:?subject=Offre d'emploi : {{ offer_title }}&body=J'ai trouvé cette offre intéressante : {{ offer_url }}" title="Partager par Email">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                    </div>
+
+                    {% endwith %}
+                </section>
+            </div>
+        </dialog> {% endcomment %}
+
+        {% endif %}
+
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends '../bases/base.html' %}
+
+{% block header %}
+
+  {% include '../bases/header.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<main class="main-layout">
+
+  {% include "../bases/left_bar.html" %}
+
+  <section class="right-bar">
+
+    <form method="POST" class="jobform">
+      {% csrf_token %}
+
+      <h1>{{ title }}</h1>
+
+      <section class="form-section">
+          <h2>Information sur le poste</h2>
+          <label for="title">Titre <strong style="color:red">*</strong></label>
+          {{ form.title }}
+
+          <label for="competence">Compétences <strong style="color:red">*</strong></label>
+          {{ form.competence }}
+
+          <label for="experience">Expérience réquise</label>
+          {{ form.experience }}
+
+          <label for="delay">Durée</label>
+          {{ form.delay }}
+
+          <label for="description">Déscription <strong style="color:red">*</strong></label>
+          {{ form.description }}
+      </section>
+
+      <section class="form-section">
+        <h2>Information sur l'entreprise</h2>
+        <label for="company-name">Nom de l'entreprise <strong style="color:red">*</strong></label>
+        {{form.company_name }}
+
+        <label for="sector">Secteur d'activité</label>
+        {{ form.activity_sector }}
+
+        <label for="contact">Coordonnées de contact</label>
+        {{ form.coordinate }}
+      </section>
+
+      {% if offer %}
+        <input type="hidden" name="offer_id" value="{{ offer.id }}">
+        <button type='submit' class="btn"><i class="bi bi-send-fill"></i>Modifier l'offre</button>
+      {% else %}
+        <button type='submit' class="btn"><i class="bi bi-send-fill"></i>Publier l'offre</button>
+      {% endif %}
+    </form>
+
+  
+</main>
+
+{% endblock %}
