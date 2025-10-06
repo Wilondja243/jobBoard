@@ -1,0 +1,140 @@
+@import url('./style.css');
+
+
+/*#################
+  FORM STYLE
+##################*/
+
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-background);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: var(--bs-card);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px var(--clr-shadow);
+    text-align: center;
+}
+
+.auth-logo {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.auth-view h2 {
+    font-size: 1.4rem;
+    color: var(--bs-text);
+    margin-bottom: 30px;
+}
+
+.auth-view form {
+    text-align: left;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.switch-link {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: var(--bs-text-muted);
+}
+
+.switch-link a {
+    color: var(--bs-text-muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.role-selector {
+    margin-bottom: 25px;
+}
+
+.role-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.role-btn {
+    flex-grow: 1;
+    padding: 15px 10px;
+    border: 2px solid #414141;
+    background-color: inherit;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--bs-text);
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.role-btn i {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--bs-text);
+}
+
+.role-btn:hover {
+    border-color: var(--bs-text-muted);
+}
+
+.role-btn.active {
+    border-color: var(--bs-text-muted);
+    background-color: var(--bs-primary-hover);
+    color: var(--bs-text);
+}
+
+/* Réactivité */
+@media (max-width: 500px) {
+    .auth-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+}
+
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    color: var(--bs-text);
+    margin-bottom: var(--space-sm);
+    font-weight: 500;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    color: var(--bs-text);
+    padding: 12px var(--space-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid #474747;
+    background: initial;
+    font-size: 16px;
+}
+
+.form-group .error{
+    color: red;
+}
+
+
+/*#################
+  END FORM STYLE
+##################*/

@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'font/bootstrap-icons.css' %}"/>
+    <link rel="stylesheet" href="{% static "stylesheet/style.css" %}">
+    <link rel="stylesheet" href="{% static "stylesheet/auth.css" %}">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %} {% endblock %}
+
+
+    {% comment %} <link rel="stylesheet" href="{% static "scripts/auth.js" %}"> {% endcomment %}
+
+</body>
+</html>

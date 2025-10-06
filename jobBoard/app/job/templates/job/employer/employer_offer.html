@@ -1,0 +1,66 @@
+{% extends "../bases/base.html" %}
+
+
+{% block header %}
+    {% include "../bases/header.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main class="main-layout">
+
+    {% include "../bases/left_bar.html" %}
+
+    <section class="right-bar">
+
+        <div class="header">
+            <h1><i class="bi bi-list"></i>Liste d'emploi publié</h1>
+            <p class="intro-text">Postulez aux meilleures offres du moment au Burundi.</p>
+        </div>
+
+
+        <!-- JOB SECTION -->
+
+        <section class="job-list">
+
+            {% if offers %}
+
+            {% for offer in offers %}
+
+            <article class="job-card">
+                <div>
+                    <h3 class="card-title">{{ offer.title }}</h3>
+                    <p class="card-subtitle">{{ offer.workplace }}</p>
+                    
+                    <span class="job-tag tag-stage">{{ offer.contract_type }}</span>
+
+                    <p class="short-description">{{ offer.description }}</p>
+                    
+                    <ul class="card-details-list">
+                        <li><i class="bi bi-calendar"></i>Debut: {{ offer.delay }}</li>
+                        <li><i class="bi bi-clock"></i>Durée: {{ offer.delay }}</li>
+                        <li><i class="bi bi-code"></i>Compétences:  {{ offer.competence }}</li>
+                    </ul>
+                </div>
+                <a href="{% url "offer_detail" offer.id %}" class="view-details-btn">Voir l'Offre</a>
+            </article>
+
+            {% endfor %}
+
+            {% else %}
+
+            <div style="text-align: center;margin: 2em 0;color: var(--bs-text-muted);">
+                <i class="bi bi-search" style="font-size: 50px;"></i>
+                <p>Aucun emploi disponible pour le moment</p> 
+            </div>
+
+            {% endif %}
+
+        </section>
+
+        <!-- END JOB SECTION -->
+    </section>
+
+</main>
+
+{% endblock %}

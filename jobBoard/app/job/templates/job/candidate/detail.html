@@ -1,0 +1,63 @@
+{% extends "../bases/base.html" %}
+
+{% block header %}
+    {% include "../bases/header.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main class="detail-container">
+
+    {% if job_offer %}
+
+    <section id="detail1" class="job-details">
+        <div class="details-header">
+            <h2 class="details-title">{{ job_offer.title }}</h2>
+            <div class="details-meta">
+                <strong>{{ job_offer.company_name }}</strong>
+                <span>{{ job_offer.workplace }}</span>
+                <span class="job-tag">{{ job_offer.delay }}</span>
+            </div>
+        </div>
+        
+        <div class="details-info-grid">
+            <div><strong>salaire</strong> <span>{{ job_offer.salary }}$</span></div>
+            <div><strong>Date de Début</strong> <span>15 Novembre 2025</span></div>
+            <div><strong>Horaires</strong> <span>Temps plein (39h/semaine)</span></div>
+        </div>
+
+        <div class="details-content">
+            <h3 class="section-heading">Description</h3>
+            <p>{{ job_offer.description }}</p>
+
+            <div>
+                <h3 class="section-heading">Compétences Techniques Impératives</h3>
+                <p>{{ job_offer.competence }}</p>
+            </div>
+            
+            <div>
+                <h3 class="section-heading">Profil et Formation Souhaités</h3>
+                <p>Étudiant(e) ou jeune diplômé(e) d'un Bac +3/5 en Informatique. Forte capacité d'apprentissage, autonomie et un **portfolio** sont des atouts.</p>
+            </div>
+        </div>
+
+        {% if has_applied %}
+
+        <button class="has_applied">L'emploi déjà postulé</button>
+
+        {% else %}
+        <form method="post" action="{% url "apply_for_job" offer_id=job_offer.id %}">
+            {% csrf_token %}
+            <button class="postuler-btn"><i class="bi bi-send-fill"></i> Postuler Maintenant</button>
+        </form>
+        {% endif %}
+    </section>
+
+    {% endif %}
+</main>
+
+{% endblock %}
+
+{% block footer %}
+    {% include "../bases/footer.html" %}
+{% endblock %}

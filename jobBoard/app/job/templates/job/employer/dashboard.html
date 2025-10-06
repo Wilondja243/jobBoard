@@ -1,0 +1,82 @@
+{% extends '../bases/base.html' %}
+
+
+{% block header %}
+    {% include '../bases/header.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<main class="main-layout">
+
+    {% include '../bases/left_bar.html' %}
+
+    <section class="right-bar">
+
+        {% if messages %}
+        {% for message in messages %}
+            <div class="message-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        
+        <!-- JOB SECTION -->
+
+        <section class="board-section">
+            <div class="board-wrapper">
+                <div>
+                    <h2>Emplois publié</h2>
+                    <small>{{ offer.total_offer }}</small>
+                </div>
+                <div>
+                    <h2>Emplois déjà postulé</h2>
+                    <small>{{ offer.total_offer_poster }}</small>
+                </div>
+                <div>
+                    <h2>Candidat postulé</h2>
+                    <small>{{ offer.total_candidate_offer_poster }}</small>
+                </div>
+            </div>
+        </section>
+
+        {% if candidate_poster %}
+
+        <section class="poster-section">
+            <h2>Liste de personnes postulé</h2>
+            <table class="poster-table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th class="del">Post-nom</th>
+                        <th>Date</th>
+                        <th>Email</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+
+                {% for candidate in candidate_poster %}
+
+                <tbody>
+                    <tr>
+                        <td>{{ candidate.user.user.username }}</td>
+                        <td class="del">{{ candidate.user.last_name }}</td>
+                        <td>{{ candidate.created_at }}</td>
+                        <td>{{ candidate.user.user.email }}</td>
+                        <td class="status completed">{{ candidate.status }}</td>
+                    </tr>
+                </tbody>
+
+                {% endfor %}
+
+            </table>
+        </section>
+
+        {% endif %}
+
+        <!-- END JOB SECTION -->
+
+    </section>
+
+</main>
+
+{% endblock %}
