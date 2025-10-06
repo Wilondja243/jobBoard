@@ -1,0 +1,441 @@
+@import url('./style.css');
+
+
+.main-layout {
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: 0.28fr 1fr;
+}
+
+h2{
+    margin-bottom: 15px;
+    color: var(--bs-text);
+    font-size: 20px;
+}
+
+
+
+/* Barre de Navigation */
+.top-bar, nav {
+    background: var(--bs-card);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #7979790e;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.top-bar .nav-content, .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--bs-text);
+}
+.logo strong{
+    color: rgb(57, 190, 112);
+}
+.post-job{
+    padding: 10px;
+    font-size: 14px;
+    color: var(--bs-text);
+    border-radius: 5px;
+    background: var(--bs-primary);
+    border: 1px solid var(--bs-card-border);
+}
+.post-job:hover{
+    color: var(--bs-text);
+    background: var(--bs-primary-hover);
+}
+
+
+/* left bar */
+
+.left-bar{
+    display: flex;
+    flex-direction: column;
+    background: var(--bs-card-opacity);
+    border: 1px solid var(--bs-card-border);
+    height: calc(100vh - 71px);
+    padding: 20px 0;
+    position: sticky;
+    top: 70px;
+}
+.left-bar h2{
+    padding: 0 20px;
+}
+.left-bar .nav-links{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.left-bar .nav-links a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--bs-text-muted);
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.left-bar .nav-links a:hover {
+    color: var(--bs-text);
+    background: var(--bs-card-border);
+}
+
+.left-bar__bottom__infos{
+    margin: auto auto 0 auto;
+    width: 100%;
+}
+.left-bar__bottom__infos a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 20px;
+    color: var(--bs-danger);
+    border: 1px solid var(--bs-card-border);
+    background: var(--bs-card-opacity);
+    cursor: pointer;
+    padding: 13px;
+    border-radius: 5px;
+}
+.left-bar__bottom__infos a:hover{
+    background: var(--bs-card);
+    color: var(--bs-danger-hover);
+}
+
+
+/* right bar */
+
+.right-bar{
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--bs-text);
+    margin-bottom: 0.5rem;
+}
+
+.header .intro-text {
+    font-size: 0.85rem;
+    color: var(--bs-text-muted);
+}
+
+
+/*#########################
+    EMPLOYER PAGE STYLE
+#########################*/
+
+
+/* job wrapper */
+
+.board-wrapper{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.board-wrapper div{
+    flex-grow: 1;
+    flex-basis: 300;
+    background: var(--bs-card-opacity);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--bs-card-border);
+    transition: transform 0.3s ease-in-out;
+}
+.board-wrapper div:hover{
+    transform: scale(1.05);
+}
+.board-wrapper div small{
+    color: var(--bs-primary);
+    font-size: clamp(25px, 5vw, 35px);
+}
+
+/* table */
+.poster-section{
+    margin-top: 3em;
+}
+.poster-table{
+    width: 100%;
+    color: var(--bs-text);
+    border-radius: 8px;
+    background: var(--bs-card-opacity);
+    border-bottom: 1px solid var(--bs-card-border);
+    overflow: auto;
+}
+.poster-table th, .poster-table td {
+    text-align: left;
+    padding: 12px;
+    border-top: 1px solid var(--bs-card-border);
+}
+
+.poster-table th {
+    background-color: var(--bs-card);
+}
+.poster-table td{
+    color: #b1b1b1;
+}
+
+.debit { color: #f44336; }
+.credit { color: #4CAF50; }
+.status.completed { color: #4CAF50; }
+.status.pending { color: #ff9800; }
+
+@media screen and (max-width: 500px){
+    nav .nav-links{
+        display: none;
+    }
+    .poster-table .del{
+        display: none;
+    }
+}
+
+
+
+/*############################
+    END EMPLOYER PAGE STYLE
+#############################*/
+
+
+
+/*#########################
+    CANDIDATE PAGE STYLE
+##########################*/
+
+/*######## SEARCH BAR STYLE ######### */
+
+.container{
+    width: 85%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.header{
+    margin-top: 1.5em;
+}
+
+.search-bar {
+    background-color: var(--bs-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0 3.5em 0;
+}
+
+.search-bar input, .search-bar button {
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.search-bar .search-wrapper{
+    border: 1px solid var(--bs-card-border);
+    display: flex;
+    border-radius: 5px;
+}
+.search-bar .search-wrapper input{
+    width: 85%;
+    outline: none;
+    border: none;
+    color: var(--bs-text);
+    background: var(--bs-bg);
+}
+.search-bar input:focus {
+    border-color: var(--bs-primary);
+    outline: none;
+}
+
+.search-bar button {
+    background-color: var(--bs-primary);
+    border: none;
+    color: var(--bs-text);
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    border-radius: 0 5px 5px 0;
+    flex-grow: 1;
+}
+
+.search-bar button:hover {
+    background-color: var(--bs-primary-hover);
+}
+
+/* ########## END SEARCH BAR STYLE ######### */
+
+
+/*######### JOB CARD LIST STYLE ######### */
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2em;
+}
+
+/*###### STYLE DE LA CARTE ######*/
+
+.job-card {
+    background-color: var(--bs-card-opacity);
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    border: 1px solid var(--bs-card-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--bs-text);
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    color: var(--bs-text-muted);
+    margin-bottom: 1rem;
+}
+
+.job-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.tag-stage { background-color: #d1e7dd1e; color: #19e284; }
+.tag-cdd { background-color: #fff3cd1f; color: #e2b01b; }
+.tag-soon { background-color: #e9ecef1f; color: #1879da; }
+
+.card-details-list {
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--bs-text);
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.card-details-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-details-list i {
+    width: 20px;
+    color: var(--bs-primary);
+    margin-right: 8px;
+}
+
+.short-description {
+    font-size: 0.95rem;
+    color: var(--bs-text);
+    margin-bottom: 1.5rem;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    /* Limiter la description à 2 lignes */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view-details-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--bs-primary);
+    color: var(--bs-text);
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-top: auto;
+}
+
+.view-details-btn:hover {
+    background-color: var(--bs-primary-hover);
+}
+
+/*####### END JOB CARD LIST STYLE ######## */
+
+/*#############################
+    END CANDIDATE PAGE STYLE
+##############################*/
+
+
+/*######## FOOTER STYLE ########*/
+
+footer {
+    background-color: var(--bs-card-opacity);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    color: var(--bs-text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--bs-text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--bs-text);
+}
+
+/*######## END FOOTER STYLE ########*/
+
+
+/* MESSAGES */
+
+.message-success{
+    padding: 12px 20px;
+    background:#29a72e17;
+    color: var(--bs-text);
+    border: 1px solid var(--bs-card-border);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar input, .search-bar select, .search-bar button {
+        width: 100%;
+    }
+    .details-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

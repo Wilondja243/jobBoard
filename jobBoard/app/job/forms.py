@@ -1,4 +1,3 @@
-import attr
 from django import forms
 from .models import Offer, EmployerProfil
 
